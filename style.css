@@ -1098,6 +1098,159 @@ h1 span {
 
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
+    width: 100%;
+    padding: 40px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
+
+    background: #02050a;
+
+    border-top: 1px solid rgba(0, 140, 255, 0.25);
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.footer-content p {
+    margin: 0;
+
+    color: #7f9bb2;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* =========================
+   REDES SOCIAIS
+========================= */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.social-button {
+    min-width: 130px;
+    height: 45px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 140, 255, 0.5);
+
+    background: rgba(0, 20, 40, 0.7);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Hover */
+
+.social-button:hover {
+    transform: translateY(-4px);
+
+    border-color: #00c8ff;
+
+    background: rgba(0, 140, 255, 0.15);
+
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.4),
+        0 0 30px rgba(0, 140, 255, 0.15);
+}
+
+
+/* WhatsApp */
+
+.whatsapp:hover {
+    border-color: #25d366;
+
+    box-shadow:
+        0 0 15px rgba(37, 211, 102, 0.5),
+        0 0 30px rgba(37, 211, 102, 0.15);
+}
+
+
+/* Instagram */
+
+.instagram:hover {
+    border-color: #e1306c;
+
+    box-shadow:
+        0 0 15px rgba(225, 48, 108, 0.5),
+        0 0 30px rgba(225, 48, 108, 0.15);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    footer {
+        padding: 30px 15px;
+    }
+
+    .social-links {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .social-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
 }
