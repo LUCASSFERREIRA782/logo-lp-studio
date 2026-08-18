@@ -1,0 +1,1103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #008cff;
+    --blue-light: #00c8ff;
+    --dark: #02050a;
+    --white: #ffffff;
+}
+
+body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: "Orbitron", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #06152b 0%,
+            #020711 45%,
+            #010205 100%
+        );
+}
+
+
+/* =========================
+   GRID FUTURISTA
+========================= */
+
+.grid {
+    position: absolute;
+
+    width: 200%;
+    height: 200%;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 140, 255, 0.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 140, 255, 0.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    transform:
+        perspective(500px)
+        rotateX(65deg)
+        translateY(35%);
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-container {
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    transform-style: preserve-3d;
+}
+
+
+/* Anel */
+
+.logo-ring {
+    width: 390px;
+    height: 390px;
+
+    position: relative;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+
+/* Círculos */
+
+.ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--blue);
+
+    box-shadow:
+        0 0 10px var(--blue),
+        0 0 30px rgba(0, 140, 255, 0.6),
+        inset 0 0 20px rgba(0, 140, 255, 0.4);
+}
+
+.ring-1 {
+    width: 100%;
+    height: 100%;
+
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+
+    animation: rotate 8s linear infinite;
+}
+
+.ring-2 {
+    width: 86%;
+    height: 86%;
+
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    animation: rotateReverse 6s linear infinite;
+}
+
+.ring-3 {
+    width: 72%;
+    height: 72%;
+
+    border-color: rgba(0, 200, 255, 0.5);
+
+    animation: rotate 12s linear infinite;
+}
+
+
+/* =========================
+   LP
+========================= */
+
+.lp-logo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 160px;
+    font-weight: 900;
+
+    letter-spacing: -25px;
+
+    transform: translateZ(50px);
+
+    color: #dceaff;
+
+    text-shadow:
+        0 2px 0 #8da9c7,
+        0 4px 0 #52708f,
+        0 0 10px #008cff,
+        0 0 25px #008cff,
+        0 0 50px rgba(0, 140, 255, 0.8);
+}
+
+.letter-l {
+    transform: skewY(-5deg);
+}
+
+.letter-p {
+    transform: skewY(-5deg);
+}
+
+
+/* =========================
+   NOME
+========================= */
+
+h1 {
+    margin-top: 25px;
+
+    font-size: 64px;
+
+    font-weight: 800;
+
+    letter-spacing: 12px;
+
+    text-shadow:
+        0 0 10px var(--blue),
+        0 0 30px rgba(0, 140, 255, 0.7);
+}
+
+h1 span {
+    color: var(--blue-light);
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    letter-spacing: 8px;
+
+    color: #b9dfff;
+}
+
+.tagline span {
+    color: var(--blue-light);
+
+    margin: 0 8px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 15px 40px;
+
+    border: 1px solid var(--blue);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    background: rgba(0, 140, 255, 0.08);
+
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.5);
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--blue);
+
+    box-shadow:
+        0 0 20px var(--blue),
+        0 0 50px rgba(0, 140, 255, 0.8);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PAINÉIS
+========================= */
+
+.panel {
+    position: absolute;
+
+    width: 260px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(0, 140, 255, 0.4);
+
+    background:
+        rgba(0, 10, 25, 0.65);
+
+    box-shadow:
+        0 0 30px rgba(0, 140, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    color: #75caff;
+}
+
+.panel-left {
+    left: 5%;
+    top: 25%;
+}
+
+.panel-right {
+    right: 5%;
+    top: 25%;
+}
+
+
+/* Título */
+
+.panel-title {
+    color: var(--blue-light);
+
+    margin-bottom: 20px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Código */
+
+.code {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    opacity: 0.7;
+}
+
+
+/* Status */
+
+.status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.status-circle {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--blue);
+
+    box-shadow:
+        0 0 20px var(--blue);
+}
+
+.status p {
+    color: #00ffae;
+}
+
+
+/* Serviços */
+
+.services {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    color: #8ed8ff;
+}
+
+
+/* =========================
+   PROJETOS
+========================= */
+
+.projects {
+    min-height: 100vh;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #06172b,
+            #010205 70%
+        );
+}
+
+.projects h2 {
+    text-align: center;
+
+    font-size: 40px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 70px;
+
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 20px var(--blue);
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.project {
+    padding: 40px;
+
+    min-height: 200px;
+
+    border: 1px solid rgba(0, 140, 255, 0.3);
+
+    background:
+        rgba(0, 20, 40, 0.5);
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 30px rgba(0, 140, 255, 0.25);
+}
+
+.project h3 {
+    color: var(--blue-light);
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+}
+
+.project p {
+    color: #9bb5c9;
+
+    line-height: 1.8;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes rotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+
+    .panel {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .logo-ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .lp-logo {
+        font-size: 110px;
+    }
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 6px;
+    }
+
+    .tagline {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #008cff;
+    --blue-light: #00c8ff;
+    --dark: #02050a;
+    --white: #ffffff;
+}
+
+body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: "Orbitron", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #06152b 0%,
+            #020711 45%,
+            #010205 100%
+        );
+}
+
+
+/* =========================
+   GRID FUTURISTA
+========================= */
+
+.grid {
+    position: absolute;
+
+    width: 200%;
+    height: 200%;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 140, 255, 0.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 140, 255, 0.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    transform:
+        perspective(500px)
+        rotateX(65deg)
+        translateY(35%);
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-container {
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    transform-style: preserve-3d;
+}
+
+
+/* Anel */
+
+.logo-ring {
+    width: 390px;
+    height: 390px;
+
+    position: relative;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+
+/* Círculos */
+
+.ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--blue);
+
+    box-shadow:
+        0 0 10px var(--blue),
+        0 0 30px rgba(0, 140, 255, 0.6),
+        inset 0 0 20px rgba(0, 140, 255, 0.4);
+}
+
+.ring-1 {
+    width: 100%;
+    height: 100%;
+
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+
+    animation: rotate 8s linear infinite;
+}
+
+.ring-2 {
+    width: 86%;
+    height: 86%;
+
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    animation: rotateReverse 6s linear infinite;
+}
+
+.ring-3 {
+    width: 72%;
+    height: 72%;
+
+    border-color: rgba(0, 200, 255, 0.5);
+
+    animation: rotate 12s linear infinite;
+}
+
+
+/* =========================
+   LP
+========================= */
+
+.lp-logo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 160px;
+    font-weight: 900;
+
+    letter-spacing: -25px;
+
+    transform: translateZ(50px);
+
+    color: #dceaff;
+
+    text-shadow:
+        0 2px 0 #8da9c7,
+        0 4px 0 #52708f,
+        0 0 10px #008cff,
+        0 0 25px #008cff,
+        0 0 50px rgba(0, 140, 255, 0.8);
+}
+
+.letter-l {
+    transform: skewY(-5deg);
+}
+
+.letter-p {
+    transform: skewY(-5deg);
+}
+
+
+/* =========================
+   NOME
+========================= */
+
+h1 {
+    margin-top: 25px;
+
+    font-size: 64px;
+
+    font-weight: 800;
+
+    letter-spacing: 12px;
+
+    text-shadow:
+        0 0 10px var(--blue),
+        0 0 30px rgba(0, 140, 255, 0.7);
+}
+
+h1 span {
+    color: var(--blue-light);
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    letter-spacing: 8px;
+
+    color: #b9dfff;
+}
+
+.tagline span {
+    color: var(--blue-light);
+
+    margin: 0 8px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 15px 40px;
+
+    border: 1px solid var(--blue);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    background: rgba(0, 140, 255, 0.08);
+
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.5);
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--blue);
+
+    box-shadow:
+        0 0 20px var(--blue),
+        0 0 50px rgba(0, 140, 255, 0.8);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PAINÉIS
+========================= */
+
+.panel {
+    position: absolute;
+
+    width: 260px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(0, 140, 255, 0.4);
+
+    background:
+        rgba(0, 10, 25, 0.65);
+
+    box-shadow:
+        0 0 30px rgba(0, 140, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    color: #75caff;
+}
+
+.panel-left {
+    left: 5%;
+    top: 25%;
+}
+
+.panel-right {
+    right: 5%;
+    top: 25%;
+}
+
+
+/* Título */
+
+.panel-title {
+    color: var(--blue-light);
+
+    margin-bottom: 20px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Código */
+
+.code {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    opacity: 0.7;
+}
+
+
+/* Status */
+
+.status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.status-circle {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--blue);
+
+    box-shadow:
+        0 0 20px var(--blue);
+}
+
+.status p {
+    color: #00ffae;
+}
+
+
+/* Serviços */
+
+.services {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    color: #8ed8ff;
+}
+
+
+/* =========================
+   PROJETOS
+========================= */
+
+.projects {
+    min-height: 100vh;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #06172b,
+            #010205 70%
+        );
+}
+
+.projects h2 {
+    text-align: center;
+
+    font-size: 40px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 70px;
+
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 20px var(--blue);
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.project {
+    padding: 40px;
+
+    min-height: 200px;
+
+    border: 1px solid rgba(0, 140, 255, 0.3);
+
+    background:
+        rgba(0, 20, 40, 0.5);
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 30px rgba(0, 140, 255, 0.25);
+}
+
+.project h3 {
+    color: var(--blue-light);
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+}
+
+.project p {
+    color: #9bb5c9;
+
+    line-height: 1.8;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes rotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+
+    .panel {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .logo-ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .lp-logo {
+        font-size: 110px;
+    }
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 6px;
+    }
+
+    .tagline {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+footer {
+    text-align: center;
+}
